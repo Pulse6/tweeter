@@ -1,0 +1,10 @@
+header {
+  background-color: #ff0000;
+  background-image: url("https://www.transparenttextures.com/patterns/shattered-dark.png");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  width: 100%;
+}
