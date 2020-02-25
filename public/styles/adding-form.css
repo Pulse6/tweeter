@@ -1,0 +1,57 @@
+.adding-form {
+  width: 100%;
+  border: 3px solid black;
+  padding: 0.7em;
+  margin: 1em 0;
+}
+
+.adding-form:hover {
+  box-shadow: 5px 5px gray;
+}
+
+.show-when-hover {
+  color: transparent;
+}
+
+.adding-form:hover .show-when-hover {
+  color: gray;
+}
+
+.adding-form img {
+  height: 50px;
+  width: 50px;
+  margin-right: 0.5em;
+}
+
+.flex-and-spacebetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 2em;
+  margin: 0 0.5em;
+}
+
+.adding-form-display {
+  word-wrap: break-word;
+  padding-bottom: 1em;
+  margin-bottom: 0;
+  padding: 0 0.5em;
+}
+
+.adding-form-info {
+  font-size: 0.8em;
+}
+
+.media {
+  display: flex;
+}
+
+.media li {
+  list-style: none;
+  margin-left: 0.5em;
+}
+
+hr {
+  height: 0.1em;
+  background-color: black;
+}

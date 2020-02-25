@@ -1,56 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,400,600,600i,700,700i&display=swap" rel="stylesheet">
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="./styles/nav.css">
-    <link rel="stylesheet" href="./styles/header.css">
-    <link rel="stylesheet" href="./styles/main.css">
-    <link rel="stylesheet" href="./styles/new-tweet.css">
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,400,600,600i,700,700i&display=swap"
+    rel="stylesheet">
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="./styles/nav.css">
+  <link rel="stylesheet" href="./styles/header.css">
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="./styles/new-tweet.css">
+  <link rel="stylesheet" href="./styles/adding-form.css">
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-  </head>
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <span class="logo">tweeter</span>
-      <span class="new-tweet">Write a new tweet</span>
-    </nav>
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+  <script src="https://kit.fontawesome.com/788ed7891b.js" crossorigin="anonymous"></script>
+</head>
 
-    <header>
-      <div>
-          <!-- <img src="/images/profile-hex.png">  -->
-          <img src="/images/gto.jpg"> 
-      </div>
-      <br>
-      <div>
-          <h2><strong>Marco</strong> Siu</h2>
-      </div>
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav>
+    <span class="logo">tweeter</span>
+    <span class="new-tweet"><span class="bold">Write</span>a new tweet</span>
+  </nav>
+
+  <header>
+    <div>
+      <!-- <img src="/images/profile-hex.png">  -->
+      <img src="/images/gto.jpg">
+    </div>
+    <br>
+    <div>
+      <h2><strong>Marco</strong> Siu</h2>
+    </div>
   </header>
-  
 
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form id="tweet-form" action="/tweets/" method="POST">
-          <textarea name="text" placeholder="What are you humming about?"></textarea>
-          <input type="submit" value="Tweet">
-          <span class="counter">140</span>
-        </form>
-      </section>      
-    </main>
-  </body>
+  <!-- Page-specific (main) content here -->
+  <main class="container">
+    <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form id="tweet-form" action="/tweets/" method="POST">
+        <textarea id="tweet-area" name="text" placeholder="What are you humming about?"></textarea>
+        <input type="submit" value="Tweet">
+        <span class="counter">140</span>
+      </form>
+    </section>
+    <section id="tweets-container" class="adding-form">
+      <!-- <section class="flex-and-spacebetween">
+        <div class="flex-and-spacebetween">
+          <img src="/images/gto.jpg" alt="icon">
+          <h3>name</h3>
+        </div>
+        <div class="show-when-hover">
+          <h3>@Name</h3>
+        </div>
+      </section>
+      <section>
+        <p class="adding-form-display">
+          qweqweqweweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweweqweqweqweqweqweqweqweqweqweqweqwweqweqweqweqweqweqweqweqweqweqweqweqweqweweqweqweqweqweqweqweqweqweqweqweqwweqweqweqweqweqweqweqweqweqweqweqweqweqweweqweqweqweqweqweqweqweqweqweqweqwweqweqweqweqweqweqweqweqweqweqweqweqweqweweqweqweqweqweqweqweqweqweqweqweqwweqweqweqweqweqweqweqweqweqweqweqweqweqweweqweqweqweqweqweqweqweqweqweqweqwweqweqweqweqweqweqweqweqweqweqweqweqweqweqweweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqwe
+        </p>
+      </section>
+      <hr>
+      <section class="flex-and-spacebetween">
+        <div>
+          <p class="adding-form-info">10 days baby</p>
+        </div>
+        <div class="adding-form-info">
+          <ul class="media">
+            <li><i class="fab fa-font-awesome-flag"></i></li>
+            <li><i class="fas fa-retweet"></i></li>
+            <li><i class="fas fa-heart"></i></li>
+          </ul>
+        </div>
+      </section> -->
+    </section>
+  </main>
+</body>
+
 </html>

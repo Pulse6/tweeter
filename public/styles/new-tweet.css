@@ -4,8 +4,10 @@ textarea {
   border: none;
   border-bottom: 3px solid black;
   height: 1.5em;
+  /* height: auto; */
   resize: none;
   margin: 10px 0;
+  /* word-wrap: break-word; */
 }
 
 textarea::placeholder {
@@ -30,4 +32,8 @@ input:hover {
 span {
   font-family: "Bungee", sans-serif;
   float: right;
+}
+
+.red {
+  color: red;
 }
