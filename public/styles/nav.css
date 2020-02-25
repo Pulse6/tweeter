@@ -4,16 +4,21 @@ nav {
   position: sticky;
   height: 120px;
   width: 100vw;
-  z-index: 1;
+  z-index: 10;
   background-color: #4056A1;
   color: #FFFFFF;
 }
-nav>span {
+
+nav span {
   margin: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo {
   font-family: "Bungee", sans-serif;
+  font-size: 1.5em;
 }
 
 .new-tweet {

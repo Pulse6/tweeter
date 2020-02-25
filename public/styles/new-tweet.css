@@ -1,0 +1,33 @@
+textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid black;
+  height: 1.5em;
+  resize: none;
+  margin: 10px 0;
+}
+
+textarea::placeholder {
+  font-weight: 700;
+}
+
+input {
+  font-family: "Bungee", sans-serif;
+  background-color: #4056A1;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  padding: 5px 15px;
+}
+
+input:hover {
+  background-color: #ff6f00;
+  color: black;
+  cursor: pointer;
+}
+
+span {
+  font-family: "Bungee", sans-serif;
+  float: right;
+}
