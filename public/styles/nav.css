@@ -31,3 +31,21 @@ nav span {
   font-family: "Source Sans Pro", sans-serif;
   text-transform: lowercase;
 }
+
+nav div {
+  position: relative;
+}
+
+nav i {
+  color: orange;
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  top: 65%;
+  animation: i 1s infinite;
+}
+
+@keyframes i {
+  0%, 100% {top: 65%;}
+  50% {top: 70%;}
+}

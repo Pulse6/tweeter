@@ -16,7 +16,7 @@ textarea::placeholder {
 
 input {
   font-family: "Bungee", sans-serif;
-  background-color: #4056A1;
+  background-color: #4056a1;
   color: white;
   text-transform: uppercase;
   border: none;
@@ -36,4 +36,16 @@ span {
 
 .red {
   color: red;
+}
+
+.alert {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: red;
+  /* border: 5px solid red; */
 }

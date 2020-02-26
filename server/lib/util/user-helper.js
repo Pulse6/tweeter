@@ -29,8 +29,8 @@ module.exports = {
    
     const avatars = {
     
-      Female: ["https://i.imgur.com/nlhLi3I.png","https://i.imgur.com/z5LNkkB.png","https://i.imgur.com/v0JXau2.png","https://i.imgur.com/lRUnDgU.png", "https://i.imgur.com/3GvwNBf.png"],
-      Male: ["https://i.imgur.com/73hZDYK.png","https://i.imgur.com/5fUVPRP.png","https://i.imgur.com/DVpDmdR.png","https://i.imgur.com/2WZtOD6.png", "https://i.imgur.com/ilT4JDe.png"]
+      Female: ["https://i.ya-webdesign.com/images/anime-girl-sad-png-5.png", "https://www.pinclipart.com/picdir/middle/72-727796_chibi-clipart-cat-cat-anime-png-download.png", "https://clipartart.com/images/anime-eyes-clipart-blush-4.jpg", "https://c7.uihere.com/files/1008/707/809/my-hero-academia-fan-art-anime-anime.jpg"],
+      Male: ["https://i.imgur.com/03gY3Bi.gif", "https://i.imgur.com/qJmFVmi.jpg", "https://pngimage.net/wp-content/uploads/2018/06/personajes-de-anime-png-5.png", "https://img.favpng.com/10/0/3/anime-icon-away-icon-face-icon-png-favpng-kQqBnHR7jN8TxGRq3TJhqzewe.jpg"]
     
     }
     
