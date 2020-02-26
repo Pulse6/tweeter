@@ -6,12 +6,13 @@
 
 // Test / driver code (temporary). Eventually will get this from the server.
 
+//making sure what user input wont affect our webpage
 const escape = function (str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 }
-
+// pre-made data for test
 const data = [
   {
     "user": {
@@ -37,7 +38,7 @@ const data = [
     "created_at": 1461113959088
   }
 ]
-
+// converts milliseconds to year/day/hour/sec
 function convertMS(milliseconds) {
   let diff = Date.now() - milliseconds
   var day, hour, minute, seconds;
@@ -57,7 +58,7 @@ function convertMS(milliseconds) {
     seconds: seconds
   };
 }
-
+// mock up for a new tweet
 const createTweetElement = (tweetData) => {
   const { name, avatars, handle } = tweetData.user;
   const text = tweetData.content.text
@@ -99,21 +100,21 @@ const createTweetElement = (tweetData) => {
 `
   return $tweet;
 }
-
+// adding new tweets at the top of the page
 const renderTweets = (data) => {
   for (let key of data) {
     const $tweet = createTweetElement(key);
     $('#tweets-container').prepend($tweet);
   }
 }
-
+// geting data and put data to renderTweets function
 const loadTweets = () => {
   $.ajax('/tweets', { method: 'GET', datatype: 'json' })
     .then((data) => {
       renderTweets(data)
     })
 }
-// toggle-input   toggle-in-and-out
+
 $(document).ready(() => {
 
   $("#toggle-input").click(function () {
@@ -121,7 +122,7 @@ $(document).ready(() => {
       $(".alert").text('')
     });
   });
-
+  // calling funciton
   loadTweets()
 
   const $form = $('#tweet-form');

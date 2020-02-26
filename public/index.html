@@ -53,6 +53,7 @@
 
   <!-- Page-specific (main) content here -->
   <main class="container">
+    <!-- Form input -->
     <section class="new-tweet animation">
       <h2 class="alert"></h2>
       <form id="tweet-form" action="/tweets/" method="POST">
@@ -62,36 +63,36 @@
       </form>
     </section>
     <section id="tweets-container">
-
+      <!-- Forms -->
       <section class="adding-form">
-      <section class="flex-and-spacebetween">
-        <div class="flex-and-spacebetween">
-          <img src="/images/gto.jpg" alt="icon">
-          <h3>Onizuka</h3>
-        </div>
-        <div class="show-when-hover">
-          <h3>@GTO</h3>
-        </div>
+        <section class="flex-and-spacebetween">
+          <div class="flex-and-spacebetween">
+            <img src="/images/gto.jpg" alt="icon">
+            <h3>Onizuka</h3>
+          </div>
+          <div class="show-when-hover">
+            <h3>@GTO</h3>
+          </div>
+        </section>
+        <section>
+          <p class="adding-form-display">
+            ティーチャー
+          </p>
+        </section>
+        <hr>
+        <section class="flex-and-spacebetween">
+          <div>
+            <p class="adding-form-info">too long ago man</p>
+          </div>
+          <div class="adding-form-info">
+            <ul class="media">
+              <li><i class="fab fa-font-awesome-flag"></i></li>
+              <li><i class="fas fa-retweet"></i></li>
+              <li><i class="fas fa-heart"></i></li>
+            </ul>
+          </div>
+        </section>
       </section>
-      <section>
-        <p class="adding-form-display">
-          ティーチャー
-        </p>
-      </section>
-      <hr>
-      <section class="flex-and-spacebetween">
-        <div>
-          <p class="adding-form-info">too long ago man</p>
-        </div>
-        <div class="adding-form-info">
-          <ul class="media">
-            <li><i class="fab fa-font-awesome-flag"></i></li>
-            <li><i class="fas fa-retweet"></i></li>
-            <li><i class="fas fa-heart"></i></li>
-          </ul>
-        </div>
-      </section>
-    </section>
 
     </section>
   </main>
@@ -99,10 +100,10 @@
   <script>
     //Get the button
     var mybutton = document.getElementById("myBtn");
-    
+
     // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {scrollFunction()};
-    
+    window.onscroll = function () { scrollFunction() };
+
     function scrollFunction() {
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         mybutton.style.display = "block";
@@ -110,14 +111,14 @@
         mybutton.style.display = "none";
       }
     }
-    
+
     // When the user clicks on the button, scroll to the top of the document
     function topFunction() {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
     }
-    </script>
-  
+  </script>
+
 </body>
 
 </html>
