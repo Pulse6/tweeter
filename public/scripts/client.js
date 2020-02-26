@@ -6,7 +6,7 @@
 
 // Test / driver code (temporary). Eventually will get this from the server.
 
-const escape =  function(str) {
+const escape = function (str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
@@ -116,12 +116,9 @@ const loadTweets = () => {
 // toggle-input   toggle-in-and-out
 $(document).ready(() => {
 
-  // $('#toggle-input').on('click', () => {
-  //   $('.animation').toggleClass('toggle-in-and-out')
-  // })
-
   $("#toggle-input").click(function () {
     $(".animation").slideToggle("slow", function () {
+      $(".alert").text('')
     });
   });
 
