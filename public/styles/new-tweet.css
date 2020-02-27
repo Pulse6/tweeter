@@ -4,10 +4,8 @@ textarea {
   border: none;
   border-bottom: 3px solid black;
   height: 1.5em;
-  /* height: auto; */
   resize: none;
   margin: 10px 0;
-  /* word-wrap: break-word; */
 }
 
 textarea::placeholder {
@@ -48,4 +46,12 @@ span {
   font-weight: 700;
   color: red;
   /* border: 5px solid red; */
+}
+
+.alert {
+  display: none;
+}
+
+#tweet-form {
+  margin: 30px 0;
 }

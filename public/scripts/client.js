@@ -119,7 +119,11 @@ $(document).ready(() => {
 
   $("#toggle-input").click(function () {
     $(".animation").slideToggle("slow", function () {
-      $(".alert").text('')
+      $(".alert").text('').hide("slow")
+      $("#toggle-input").removeClass("red")
+      $area.val('')
+      $area.parent().find(".counter").text(140)
+      $area.parent().find(".counter").removeClass("red")
     });
   });
   // calling funciton
@@ -132,13 +136,15 @@ $(document).ready(() => {
     event.preventDefault()
     // console.log($area.val().length)
     if ($area.val().length > 140) {
-      $(".alert").text("You have input more than 140 text!!!!!");
+      $(".alert").text("You have input more than 140 text!!!!!").show("slow")
+      $("#toggle-input").addClass("red")
       return;
     } else if ($area.val() === "" || $area.val() === null) {
-      $(".alert").text("Please input a tweet before tweeting!!!!!");
+      $(".alert").text("Please input a tweet before tweeting!!!!!").show("slow")
+      $("#toggle-input").addClass("red")
       return;
     }
-    // console.log($('#tweet-area').val())
+
     $.ajax({
       url: '/tweets',
       method: 'POST',
@@ -146,7 +152,8 @@ $(document).ready(() => {
       success: () => {
         $area.val('')
         $area.parent().find(".counter").text(140)
-        $(".alert").text('')
+        $(".alert").text('').hide("slow")
+        $("#toggle-input").removeClass("red")
         loadTweets();
       }
     })
