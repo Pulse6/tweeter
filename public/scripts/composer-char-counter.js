@@ -13,14 +13,17 @@ $(document).ready(() => {
 
   //Get the button
   const mybutton = document.getElementById("myBtn");
+  const nav = document.getElementById("show-and-hide");
 
   // When the user scrolls down 20px from the top of the document, show the button
   window.onscroll = function () { scrollFunction() };
 
   function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      nav.style.display = "none"
       mybutton.style.display = "block";
     } else {
+      nav.style.display = "flex"
       mybutton.style.display = "none";
     }
   }
@@ -31,7 +34,7 @@ $(document).ready(() => {
     document.documentElement.scrollTop = 0;
   }
   $("#myBtn").on('click', function () {
-    $(".animation").slideToggle("slow")
+    $(".animation").slideDown("slow")
     topFunction()
   })
 })

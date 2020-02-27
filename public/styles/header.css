@@ -5,7 +5,8 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 400px;
+  padding-top: 120px;
+  height: 520px;
   width: 100%;
   color: white;
 }

@@ -144,20 +144,21 @@ $(document).ready(() => {
         $("#toggle-input").addClass("red")
         return;
       }
-  
+
       $.ajax({
         url: '/tweets',
         method: 'POST',
         data: $form.serialize(),
         success: () => {
-          $area.val('')
-          $area.parent().find(".counter").text(140)
           $(".alert").text('').slideUp("slow")
+          $(".animation").slideUp("slow")
+          $area.parent().find(".counter").text(140)
+          $area.val('')
           $("#toggle-input").removeClass("red")
           loadTweets();
         }
       })
-      
+
     })
     // console.log($area.val().length)
   })
