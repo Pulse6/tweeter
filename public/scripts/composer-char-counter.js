@@ -31,6 +31,7 @@ $(document).ready(() => {
     document.documentElement.scrollTop = 0;
   }
   $("#myBtn").on('click', function () {
+    $(".animation").slideToggle("slow")
     topFunction()
   })
 })
