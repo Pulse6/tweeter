@@ -43,7 +43,19 @@
 }
 
 .media {
+  display: none;
+}
+
+.media i {
+  cursor: pointer;
+}
+
+.adding-form:hover .media {
   display: flex;
+}
+
+.adding-form .media i:hover {
+  color: orange;
 }
 
 .media li {

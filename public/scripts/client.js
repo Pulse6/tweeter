@@ -63,13 +63,13 @@ const createTweetElement = (tweetData) => {
   const { name, avatars, handle } = tweetData.user;
   const text = tweetData.content.text
   const { year, day, hour, minute, seconds } = convertMS(tweetData.created_at)
-  const date = `${year}year ${day}days ${hour}hours ${minute}mins ${seconds}s`
+  const date = `${year}year ${hour}hours ${minute}mins ${seconds}s`
 
   let $tweet =
     `
 <article class="tweet">
 <section class="adding-form">
-<section class="flex-and-spacebetween">
+<header class="flex-and-spacebetween">
   <div class="flex-and-spacebetween">
     <img src=${avatars} alt="icon">
     <h3>${name}</h3>
@@ -77,14 +77,14 @@ const createTweetElement = (tweetData) => {
   <div class="show-when-hover">
     <h3>${handle}</h3>
   </div>
-</section>
-<section>
+</header>
+<body>
   <p class="adding-form-display">
   ${escape(text)}
   </p>
-</section>
+</body>
 <hr>
-<section class="flex-and-spacebetween">
+<footer class="flex-and-spacebetween">
   <div>
     <p class="adding-form-info">${date}</p>
   </div>
@@ -95,18 +95,28 @@ const createTweetElement = (tweetData) => {
       <li><i class="fas fa-heart"></i></li>
     </ul>
   </div>
-</section>
+</footer>
 </article>
 `
   return $tweet;
 }
 // adding new tweets at the top of the page
+// const renderTweets = (data) => {
+//   $('#tweets-container').empty()
+//   const storingData = []
+//   for (let key of data) {
+//     const $tweet = createTweetElement(key);
+//     storingData.unshift($tweet);
+//   }
+//   $('#tweets-container').prepend(storingData)
+// }
 const renderTweets = (data) => {
   for (let key of data) {
     const $tweet = createTweetElement(key);
     $('#tweets-container').prepend($tweet);
   }
 }
+
 // geting data and put data to renderTweets function
 const loadTweets = () => {
   $.ajax('/tweets', { method: 'GET', datatype: 'json' })
@@ -116,11 +126,12 @@ const loadTweets = () => {
 }
 
 $(document).ready(() => {
-
+  // what happens when its click
   $("#toggle-input").click(function () {
     $(".animation").slideToggle("slow", function () {
       $(".alert").text('').slideUp("slow")
       $("#toggle-input").removeClass("red")
+      $("#tweet-area").focus()
       $area.val('')
       $area.parent().find(".counter").text(140)
       $area.parent().find(".counter").removeClass("red")

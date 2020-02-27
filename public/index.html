@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="./styles/main.css">
   <link rel="stylesheet" href="./styles/new-tweet.css">
   <link rel="stylesheet" href="./styles/adding-form.css">
+  <link rel="stylesheet" href="./styles/media.css">
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -30,7 +31,7 @@
 </head>
 
 <body>
-  <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-angle-double-up"></i></button>
+  <button id="myBtn" title="Go to top"><i class="fas fa-angle-double-up"></i></button>
   <!-- Top nav bar (fixed) -->
   <nav>
     <span class="logo">tweeter</span>
@@ -40,61 +41,64 @@
     </div>
   </nav>
 
-  <header>
-    <div>
-      <img src="/images/gto.jpg">
-    </div>
-    <br>
-    <div>
-      <h2><strong>Marco</strong> Siu</h2>
-    </div>
-  </header>
-
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-    <!-- Form input -->
-    <section class="new-tweet animation">
-        <h2 class="alert"></h2>
-      <form id="tweet-form" action="/tweets/" method="POST">
-        <textarea id="tweet-area" name="text" placeholder="What are you humming about?"></textarea>
-        <input id="submit" type="submit" value="Tweet">
-        <span class="counter">140</span>
-      </form>
-    </section>
-    <section id="tweets-container">
-      <!-- Forms -->
-      <section class="adding-form">
-        <section class="flex-and-spacebetween">
-          <div class="flex-and-spacebetween">
-            <img src="/images/gto.jpg" alt="icon">
-            <h3>Onizuka</h3>
-          </div>
-          <div class="show-when-hover">
-            <h3>@GTO</h3>
-          </div>
-        </section>
-        <section>
-          <p class="adding-form-display">
-            ティーチャー
-          </p>
-        </section>
-        <hr>
-        <section class="flex-and-spacebetween">
-          <div>
-            <p class="adding-form-info">too long ago man</p>
-          </div>
-          <div class="adding-form-info">
-            <ul class="media">
-              <li><i class="fab fa-font-awesome-flag"></i></li>
-              <li><i class="fas fa-retweet"></i></li>
-              <li><i class="fas fa-heart"></i></li>
-            </ul>
-          </div>
-        </section>
+  <section class="for-media">
+    <header class="user-header">
+      <div>
+        <img src="/images/gto.jpg">
+      </div>
+      <br>
+      <div>
+        <h2><strong>Marco</strong> Siu</h2>
+      </div>
+    </header>
+  
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <!-- Form input -->
+      <section class="new-tweet animation">
+          <h2 class="alert"></h2>
+        <form id="tweet-form" action="/tweets/" method="POST">
+          <textarea id="tweet-area" name="text" placeholder="What are you humming about?"></textarea>
+          <input id="submit" type="submit" value="Tweet">
+          <span class="counter">140</span>
+        </form>
       </section>
-
-    </section>
-  </main>
+      <section id="tweets-container">
+        <!-- Forms -->
+        <section class="adding-form">
+          <header class="flex-and-spacebetween">
+            <div class="flex-and-spacebetween">
+              <img src="/images/gto.jpg" alt="icon">
+              <h3>Onizuka</h3>
+            </div>
+            <div class="show-when-hover">
+              <h3>@GTO</h3>
+            </div>
+          </header>
+          <body>
+            <p class="adding-form-display">
+              ティーチャー
+            </p>
+          </body>
+          <hr>
+          <footer class="flex-and-spacebetween">
+            <div>
+              <p class="adding-form-info">too long ago man</p>
+            </div>
+            <div class="adding-form-info">
+              <ul class="media">
+                <li><i class="fab fa-font-awesome-flag"></i></li>
+                <li><i class="fas fa-retweet"></i></li>
+                <li><i class="fas fa-heart"></i></li>
+              </ul>
+            </div>
+          </footer>
+        </section>
+  
+      </section>
+    </main>
+  </section>
+  
 </body>
 
 </html>

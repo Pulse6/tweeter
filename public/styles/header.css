@@ -1,4 +1,4 @@
-header {
+.user-header {
   background-color: #ff6f00;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   display: flex;
@@ -11,7 +11,7 @@ header {
   color: white;
 }
 
-h2 {
+.user-header h2 {
   font-family: "Source Sans Pro";
   font-weight: 300;
 }

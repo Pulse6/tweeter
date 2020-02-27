@@ -1,0 +1,31 @@
+@media (min-width: 1024px) {
+  .for-media {
+    display: flex;
+  }
+  .user-header {
+    margin: 200px 50px 50px;
+    padding: 0;
+    height: 400px;
+    max-width: 600px;
+  }
+  main {
+    margin: 200px 50px 50px;
+  }
+  .alert {
+    font-size: 1em;
+  }
+  .adding-form h3{
+    font-size: 1em;
+  }
+}
+@media (max-width: 1024px) {
+  nav {
+    background-color: transparent;
+  }
+  .logo {
+    text-shadow: black 1px 2px;
+  }
+  #toggle-input {
+    color: blue;
+  }
+}
