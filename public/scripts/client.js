@@ -119,7 +119,7 @@ $(document).ready(() => {
 
   $("#toggle-input").click(function () {
     $(".animation").slideToggle("slow", function () {
-      $(".alert").text('').hide("slow")
+      $(".alert").text('').slideUp("slow")
       $("#toggle-input").removeClass("red")
       $area.val('')
       $area.parent().find(".counter").text(140)
@@ -134,28 +134,31 @@ $(document).ready(() => {
 
   $form.on('submit', () => {
     event.preventDefault()
-    // console.log($area.val().length)
-    if ($area.val().length > 140) {
-      $(".alert").text("You have input more than 140 text!!!!!").show("slow")
-      $("#toggle-input").addClass("red")
-      return;
-    } else if ($area.val() === "" || $area.val() === null) {
-      $(".alert").text("Please input a tweet before tweeting!!!!!").show("slow")
-      $("#toggle-input").addClass("red")
-      return;
-    }
-
-    $.ajax({
-      url: '/tweets',
-      method: 'POST',
-      data: $form.serialize(),
-      success: () => {
-        $area.val('')
-        $area.parent().find(".counter").text(140)
-        $(".alert").text('').hide("slow")
-        $("#toggle-input").removeClass("red")
-        loadTweets();
+    $(".alert").text("").slideUp("slow", () => {
+      if ($area.val().length > 140) {
+        $(".alert").text("💣 You have input more than 140 text!!!!! 💣").slideDown("slow")
+        $("#toggle-input").addClass("red")
+        return;
+      } else if ($area.val() === "" || $area.val() === null) {
+        $(".alert").text("🧨 Please input a tweet before tweeting!!!!! 🧨").slideDown("slow")
+        $("#toggle-input").addClass("red")
+        return;
       }
+  
+      $.ajax({
+        url: '/tweets',
+        method: 'POST',
+        data: $form.serialize(),
+        success: () => {
+          $area.val('')
+          $area.parent().find(".counter").text(140)
+          $(".alert").text('').slideUp("slow")
+          $("#toggle-input").removeClass("red")
+          loadTweets();
+        }
+      })
+      
     })
+    // console.log($area.val().length)
   })
 });
