@@ -7,41 +7,41 @@
 // Test / driver code (temporary). Eventually will get this from the server.
 
 //making sure what user input wont affect our webpage
-const escape = function (str) {
+const escape = function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
+};
 // pre-made data for test
-const data = [
-  {
-    "user": {
-      "name": "いつき",
-      "avatars": "https://img.favpng.com/10/0/3/anime-icon-away-icon-face-icon-png-favpng-kQqBnHR7jN8TxGRq3TJhqzewe.jpg"
-      ,
-      "handle": "@い"
-    },
-    "content": {
-      "text": "おはようございます。"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "あきら",
-      "avatars": "https://www.pinclipart.com/picdir/middle/72-727796_chibi-clipart-cat-cat-anime-png-download.png",
-      "handle": "@あ"
-    },
-    "content": {
-      "text": "おねがいします。"
-    },
-    "created_at": 1461113959088
-  }
-]
+// const data = [
+//   {
+//     "user": {
+//       "name": "いつき",
+//       "avatars": "https://img.favpng.com/10/0/3/anime-icon-away-icon-face-icon-png-favpng-kQqBnHR7jN8TxGRq3TJhqzewe.jpg"
+//       ,
+//       "handle": "@い"
+//     },
+//     "content": {
+//       "text": "おはようございます。"
+//     },
+//     "created_at": 1461116232227
+//   },
+//   {
+//     "user": {
+//       "name": "あきら",
+//       "avatars": "https://www.pinclipart.com/picdir/middle/72-727796_chibi-clipart-cat-cat-anime-png-download.png",
+//       "handle": "@あ"
+//     },
+//     "content": {
+//       "text": "おねがいします。"
+//     },
+//     "created_at": 1461113959088
+//   }
+// ];
 // converts milliseconds to year/day/hour/sec
 function convertMS(milliseconds) {
-  let diff = Date.now() - milliseconds
-  var day, hour, minute, seconds;
+  let diff = Date.now() - milliseconds;
+  let day, hour, minute, seconds;
   seconds = Math.floor(diff / 1000);
   minute = Math.floor(seconds / 60);
   seconds = seconds % 60;
@@ -61,9 +61,9 @@ function convertMS(milliseconds) {
 // mock up for a new tweet
 const createTweetElement = (tweetData) => {
   const { name, avatars, handle } = tweetData.user;
-  const text = tweetData.content.text
-  const { year, day, hour, minute, seconds } = convertMS(tweetData.created_at)
-  const date = `${year}year ${hour}hours ${minute}mins ${seconds}s`
+  const text = tweetData.content.text;
+  const { year, day, hour, minute, seconds } = convertMS(tweetData.created_at);
+  const date = `${year}year ${hour}hours ${minute}mins ${seconds}s`;
 
   let $tweet =
     `
@@ -97,62 +97,53 @@ const createTweetElement = (tweetData) => {
   </div>
 </footer>
 </article>
-`
+`;
   return $tweet;
-}
+};
 // adding new tweets at the top of the page
-// const renderTweets = (data) => {
-//   $('#tweets-container').empty()
-//   const storingData = []
-//   for (let key of data) {
-//     const $tweet = createTweetElement(key);
-//     storingData.unshift($tweet);
-//   }
-//   $('#tweets-container').prepend(storingData)
-// }
 const renderTweets = (data) => {
   for (let key of data) {
     const $tweet = createTweetElement(key);
     $('#tweets-container').prepend($tweet);
   }
-}
+};
 
 // geting data and put data to renderTweets function
 const loadTweets = () => {
   $.ajax('/tweets', { method: 'GET', datatype: 'json' })
     .then((data) => {
-      renderTweets(data)
-    })
-}
+      renderTweets(data);
+    });
+};
 
 $(document).ready(() => {
   // what happens when its click
-  $("#toggle-input").click(function () {
-    $(".animation").slideToggle("slow", function () {
-      $(".alert").text('').slideUp("slow")
-      $("#toggle-input").removeClass("red")
-      $("#tweet-area").focus()
-      $area.val('')
-      $area.parent().find(".counter").text(140)
-      $area.parent().find(".counter").removeClass("red")
+  $("#toggle-input").click(function() {
+    $(".animation").slideToggle("slow", function() {
+      $(".alert").text('').slideUp("slow");
+      $("#toggle-input").removeClass("red");
+      $("#tweet-area").focus();
+      $area.val('');
+      $area.parent().find(".counter").text(140);
+      $area.parent().find(".counter").removeClass("red");
     });
   });
   // calling funciton
-  loadTweets()
+  loadTweets();
 
   const $form = $('#tweet-form');
   const $area = $('#tweet-area');
 
   $form.on('submit', () => {
-    event.preventDefault()
+    event.preventDefault();
     $(".alert").text("").slideUp("slow", () => {
       if ($area.val().length > 140) {
-        $(".alert").text("💣 You have input more than 140 text!!!!! 💣").slideDown("slow")
-        $("#toggle-input").addClass("red")
+        $(".alert").text("💣 You have input more than 140 text!!!!! 💣").slideDown("slow");
+        $("#toggle-input").addClass("red");
         return;
       } else if ($area.val() === "" || $area.val() === null) {
-        $(".alert").text("🧨 Please input a tweet before tweeting!!!!! 🧨").slideDown("slow")
-        $("#toggle-input").addClass("red")
+        $(".alert").text("🧨 Please input a tweet before tweeting!!!!! 🧨").slideDown("slow");
+        $("#toggle-input").addClass("red");
         return;
       }
 
@@ -161,16 +152,14 @@ $(document).ready(() => {
         method: 'POST',
         data: $form.serialize(),
         success: () => {
-          $(".alert").text('').slideUp("slow")
-          $(".animation").slideUp("slow")
-          $area.parent().find(".counter").text(140)
-          $area.val('')
-          $("#toggle-input").removeClass("red")
+          $(".animation").slideUp("slow");
+          $(".alert").text('').slideUp("slow");
+          $area.parent().find(".counter").text(140);
+          $area.val('');
+          $("#toggle-input").removeClass("red");
           loadTweets();
         }
-      })
-
-    })
-    // console.log($area.val().length)
-  })
+      });
+    });
+  });
 });
