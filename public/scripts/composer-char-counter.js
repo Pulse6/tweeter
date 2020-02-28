@@ -17,10 +17,6 @@ $(document).ready(() => {
 
   // When the user scrolls down 20px from the top of the document, show the button
   window.onscroll = function() {
-    scrollFunction();
-  };
-
-  function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
       nav.style.display = "none";
       mybutton.style.display = "block";
@@ -28,17 +24,11 @@ $(document).ready(() => {
       nav.style.display = "flex";
       mybutton.style.display = "none";
     }
-  }
-
-  // When the user clicks on the button, scroll to the top of the document
-  // function topFunction() {
-  //   document.body.scrollTop = 0;
-  //   document.documentElement.scrollTop = 0;
-  // }
+  };
+  // when botton click brings you to the top
   $("#myBtn").on('click', function() {
     $(".animation").slideDown("slow");
     $(".alert").text('').slideUp("slow");
-    // topFunction();
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   });
