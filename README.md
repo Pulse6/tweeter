@@ -15,3 +15,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Preview
+
+!["Screenshot of tweeter"](https://github.com/Pulse6/tweeter/blob/master/docs/page1.png)
+!["Screenshot of tweeter"](https://github.com/Pulse6/tweeter/blob/master/docs/page2.png)
