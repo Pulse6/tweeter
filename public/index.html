@@ -31,7 +31,7 @@
 </head>
 
 <body>
-    <button id="myBtn" title="Go to top"><i class="fas fa-angle-double-up"></i></button>
+  <button id="myBtn" title="Go to top"><i class="fas fa-angle-double-up"></i></button>
   <!-- Top nav bar (fixed) -->
   <nav>
     <span class="logo">tweeter</span>
@@ -40,7 +40,7 @@
       <i id="toggle-input" class="fas fa-angle-double-down"></i>
     </div>
   </nav>
-
+  <!-- user info display -->
   <section class="for-media">
     <header class="user-header">
       <div>
@@ -51,55 +51,26 @@
         <h2><strong>Marco</strong> Siu</h2>
       </div>
     </header>
-  
+
     <!-- Page-specific (main) content here -->
     <main class="container">
+
       <!-- Form input -->
       <section class="new-tweet animation">
-          <h2 class="alert"></h2>
+        <h2 class="alert"></h2>
         <form id="tweet-form" action="/tweets/" method="POST">
           <textarea id="tweet-area" name="text" placeholder="What are you humming about?"></textarea>
           <input id="submit" type="submit" value="Tweet">
           <span class="counter">140</span>
         </form>
       </section>
-      <section id="tweets-container">
-        <!-- Forms -->
 
-        <!-- <section class="adding-form">
-          <header class="flex-and-spacebetween">
-            <div class="flex-and-spacebetween">
-              <img src="/images/gto.jpg" alt="icon">
-              <h3>Onizuka</h3>
-            </div>
-            <div class="show-when-hover">
-              <h3>@GTO</h3>
-            </div>
-          </header>
-          <body>
-            <p class="adding-form-display">
-              ティーチャー
-            </p>
-          </body>
-          <hr>
-          <footer class="flex-and-spacebetween">
-            <div>
-              <p class="adding-form-info">too long ago man</p>
-            </div>
-            <div class="adding-form-info">
-              <ul class="media">
-                <li><i class="fab fa-font-awesome-flag"></i></li>
-                <li><i class="fas fa-retweet"></i></li>
-                <li><i class="fas fa-heart"></i></li>
-              </ul>
-            </div>
-          </footer>
-        </section> -->
-  
+      <!-- where tweets will be added -->
+      <section id="tweets-container">
+
       </section>
     </main>
   </section>
-  
 </body>
 
 </html>

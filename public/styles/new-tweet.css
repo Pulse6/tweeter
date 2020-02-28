@@ -42,16 +42,13 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5em;
+  text-align: center;
+  font-size: 1em;
   font-weight: 700;
   color: red;
-  border: 5px solid red;
+  border: 3px solid red;
   padding: 15px;
-}
-
-.alert {
   display: none;
-  text-align: center;
 }
 
 #tweet-form {

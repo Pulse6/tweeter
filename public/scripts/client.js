@@ -7,37 +7,11 @@
 // Test / driver code (temporary). Eventually will get this from the server.
 
 //making sure what user input wont affect our webpage
-const escape = function(str) {
+const escape = function (str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
-// pre-made data for test
-// const data = [
-//   {
-//     "user": {
-//       "name": "いつき",
-//       "avatars": "https://img.favpng.com/10/0/3/anime-icon-away-icon-face-icon-png-favpng-kQqBnHR7jN8TxGRq3TJhqzewe.jpg"
-//       ,
-//       "handle": "@い"
-//     },
-//     "content": {
-//       "text": "おはようございます。"
-//     },
-//     "created_at": 1461116232227
-//   },
-//   {
-//     "user": {
-//       "name": "あきら",
-//       "avatars": "https://www.pinclipart.com/picdir/middle/72-727796_chibi-clipart-cat-cat-anime-png-download.png",
-//       "handle": "@あ"
-//     },
-//     "content": {
-//       "text": "おねがいします。"
-//     },
-//     "created_at": 1461113959088
-//   }
-// ];
 // converts milliseconds to year/day/hour/sec
 function convertMS(milliseconds) {
   let diff = Date.now() - milliseconds;
@@ -64,7 +38,6 @@ const createTweetElement = (tweetData) => {
   const text = tweetData.content.text;
   const { year, day, hour, minute, seconds } = convertMS(tweetData.created_at);
   const date = `${year}year ${hour}hours ${minute}mins ${seconds}s`;
-
   let $tweet =
     `
 <article class="tweet">
@@ -102,6 +75,7 @@ const createTweetElement = (tweetData) => {
 };
 // adding new tweets at the top of the page
 const renderTweets = (data) => {
+  $('#tweets-container').empty();
   for (let key of data) {
     const $tweet = createTweetElement(key);
     $('#tweets-container').prepend($tweet);
@@ -118,8 +92,8 @@ const loadTweets = () => {
 
 $(document).ready(() => {
   // what happens when its click
-  $("#toggle-input").click(function() {
-    $(".animation").slideToggle("slow", function() {
+  $("#toggle-input").click(function () {
+    $(".animation").slideToggle("slow", function () {
       $(".alert").text('').slideUp("slow");
       $("#toggle-input").removeClass("red");
       $("#tweet-area").focus();
